@@ -1,0 +1,31 @@
+h1{
+    text-align: center;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: honeydew;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px; /* spacing between items */
+}
+
+.grid-item {
+  background-color: #f0f0f0;
+  padding: 40px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Responsive layout for mobile devices */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Stack items in 1 column */
+  }
+}
