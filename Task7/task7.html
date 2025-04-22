@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pure CSS Carousel</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .carousel {
+      width: 90%;
+      max-width: 600px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    .slides {
+      display: flex;
+      width: 300%;
+      transition: transform 0.6s ease;
+    }
+
+    .slide {
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .slide img {
+      width: 100%;
+      display: block;
+      height: 600px;
+      object-fit: cover;
+    }
+
+    .navigation {
+      position: absolute;
+      width: 100%;
+      bottom: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .bar {
+      width: 12px;
+      height: 12px;
+      background: #fff;
+      opacity: 0.5;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    input#r1:checked ~ .slides {
+      transform: translateX(0%);
+    }
+    input#r2:checked ~ .slides {
+      transform: translateX(-100%);
+    }
+    input#r3:checked ~ .slides {
+      transform: translateX(-200%);
+    }
+
+    input#r1:checked ~ .navigation label[for="r1"],
+    input#r2:checked ~ .navigation label[for="r2"],
+    input#r3:checked ~ .navigation label[for="r3"] {
+      opacity: 1;
+    }
+
+    /* Auto sliding using animation */
+    .carousel:not(:has(input:checked)) .slides {
+      animation: slide 9s infinite;
+    }
+
+    @keyframes slide {
+      0%, 33% {
+        transform: translateX(0%);
+      }
+      33.01%, 66% {
+        transform: translateX(-100%);
+      }
+      66.01%, 100% {
+        transform: translateX(-200%);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .bar {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="carousel">
+
+  <!-- Manual Controls -->
+  <input type="radio" name="r" id="r1">
+  <input type="radio" name="r" id="r2">
+  <input type="radio" name="r" id="r3">
+
+
+  <div class="slides">
+    <div class="slide"><img src="https://picsum.photos/id/1018/800/400" alt="Slide 1"></div>
+    <div class="slide"><img src="https://picsum.photos/id/1015/800/400" alt="Slide 2"></div>
+    <div class="slide"><img src="https://picsum.photos/id/1019/800/400" alt="Slide 3"></div>
+  </div>
+
+  <div class="navigation">
+    <label class="bar" for="r1"></label>
+    <label class="bar" for="r2"></label>
+    <label class="bar" for="r3"></label>
+  </div>
+
+</div>
+
+</body>
+</html>
