@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Accordion</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .accordion {
+      width: 100%;
+      max-width: 600px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .accordion-section {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .accordion-section:last-child {
+      border-bottom: none;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    label {
+      display: block;
+      padding: 16px;
+      background: #cb8d8d;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    label:hover {
+      background: #9e8e8e;
+    }
+
+    .content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      padding: 0 16px;
+      background: #fafafa;
+    }
+
+    input[type="checkbox"]:checked + label + .content {
+      max-height: 200px;
+      padding: 16px;
+    }
+
+    .content p {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+
+<div class="accordion">
+  
+  <div class="accordion-section">
+    <input type="checkbox" id="section1">
+    <label for="section1">Section 1: Overview</label>
+    <div class="content">
+      <p>This is the content for section 1. It gives an overview of the topic.</p>
+    </div>
+  </div>
+
+  
+  <div class="accordion-section">
+    <input type="checkbox" id="section2">
+    <label for="section2">Section 2: Details</label>
+    <div class="content">
+      <p>This is the content for section 2. It gives description of the topic.</p>
+    </div>
+  </div>
+
+  
+  <div class="accordion-section">
+    <input type="checkbox" id="section3">
+    <label for="section3">Section 3: Extra Info</label>
+    <div class="content">
+      <p>This is the content for section 3. It gives additional information related to the topic.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
