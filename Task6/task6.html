@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Tabbed Interface</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: lavenderblush;
+    }
+
+    .tabs {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    /* Hiding radio buttons */
+    input[type="radio"] {
+      display: none;
+    }
+
+    .tab-label {
+      padding: 12px 20px;
+      display: inline-block;
+      background: #ddd;
+      cursor: pointer;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      margin-right: 2px;
+      transition: background 0.3s;
+    }
+
+    .tab-label:hover {
+      background: #bbb;
+    }
+
+    /* Active tab label style */
+    input[type="radio"]:checked + .tab-label {
+      background: #fff;
+      border-bottom: 2px solid white;
+    }
+
+    /* Content sections */
+    .tab-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: none;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    /* Show the selected tab's content */
+    #tab1:checked ~ .content #content1,
+    #tab2:checked ~ .content #content2,
+    #tab3:checked ~ .content #content3 {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h1{
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>EMPLOYEE DETAILS</h1>
+  <br><br>
+
+<div class="tabs">
+  <!-- Radio Buttons -->
+  <input type="radio" name="tab" id="tab1" checked>
+  <label class="tab-label" for="tab1">Personal Details</label>
+
+  <input type="radio" name="tab" id="tab2">
+  <label class="tab-label" for="tab2">Education</label>
+
+  <input type="radio" name="tab" id="tab3">
+  <label class="tab-label" for="tab3">Work Experience</label>
+
+  <!-- Content -->
+  <div class="content">
+    <div class="tab-content" id="content1">
+      <h3>Employee Details</h3>
+      <p>Name : Karthik Sharma</p>
+      <p>ID : 101</p>
+      <p>Dept : Devops</p>
+      <p>Email : ksharma@abc.com</p>
+      <p>Phone : +91 9876543219</p>
+    </div>
+
+    <div class="tab-content" id="content2">
+      <h3>Education Details</h3>
+      <h4>Btech CSE</h4>
+      <p>College : Sastra University</p>
+      <p>Year of completion: 2025</p>
+      <p>Grade : 97%</p>
+      <br>
+      <h4>Class XII</h4>
+      <p>School : XYZ</p>
+      <p>Year of completion : 2021</p>
+      <p>Grade : 95%</p>
+    </div>
+
+    <div class="tab-content" id="content3">
+      <h3>Work Details</h3>
+      <h4>Presidio</h4>
+      <p>Job Title : Intern</p>
+      <p>Description : Working with C#, HTML, CSS, JavaScript, Git and SQL.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
