@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi-page Simulator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="body">
+  <header>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <label class="theme-toggle">
+      <input type="checkbox" id="themeToggle" onchange="document.body.classList.toggle('dark')">
+      <span class="switch"></span>
+      Theme
+    </label>
+  </header>
+
+  <div class="pages">
+
+      <section id="home" class="page">
+        <h1>Welcome to ShopEase</h1><br>
+        <p>Explore the best deals on gadgets, fashion, and more!</p>
+      
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" name="radio-btn" id="radio1" checked>
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+      
+            <div class="slide">
+              <img src="https://static.vecteezy.com/system/resources/thumbnails/011/379/639/small/shop-now-button-free-vector.jpg" alt="Slide 1" />
+            </div>
+            <div class="slide">
+              <img src="https://www.shutterstock.com/image-vector/flash-sale-event-big-offer-600nw-2473821577.jpg" alt="Slide 2" />
+            </div>
+            <div class="slide">
+              <img src="https://www.shutterstock.com/image-vector/clothes-hanger-new-arrival-tag-260nw-180585035.jpg" alt="Slide 3" />
+            </div>
+      
+          </div>
+        </div>
+      </section>
+      
+
+    <section id="products" class="page">
+      <h1>Featured Products</h1>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="https://in.cmf.tech/cdn/shop/files/watch_pro_mobile-1_750x.png?v=1704281282" alt="Product 1" />
+          <h3>Smartwatch Pro</h3>
+          <p>₹2999.00</p>
+        </div>
+        <div class="product-card">
+          <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/ion_anc_1.png?v=1740725927" alt="Product 2" />
+          <h3>Wireless Earbuds</h3>
+          <p>₹1499.00</p>
+        </div>
+        <div class="product-card">
+          <img src="https://static.toys.cmsaceturtle.com/prod/product-image/toys/tru/Brand%20Image%20Dump/MCSTOTEBAG003/MCSTOTEBAG003_1.jpg" alt="Product 3" />
+          <h3>Canvas Totebag</h3>
+          <p>₹699.00</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="page">
+      <h1>About Us</h1><br>
+      <p>ShopEase is your go-to destination for high-quality products at affordable prices. Experience shopping like never before!</p>
+      <br><br><br>
+
+      <h1>Contact Us</h1><br>
+        <div class="card">
+          <p>Email: support@shopease.com</p>
+          <p>Phone: +044-2365-2987</p>
+          <p>Follow our instagram handle : @shopeasedotin</p>
+        </div>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 ShopEase | Your One-Stop E-Commerce Destination
+  </footer>
+</body>
+</html>
