@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Grid & Flex Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto auto auto;
+      background: #f3f3f3;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: #4b4949;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      z-index: 100;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 300px auto;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    aside {
+      background: #f4f3f3;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 80px;
+      height: fit-content;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+
+
+    .footer {
+      width: 100%;
+      background: #444;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        order: 2;
+        position: static;
+      }
+
+      main {
+        order: 1;
+      }
+    }
+
+    .accordion {
+      width: 250px;
+      background: #333;
+      color: white;
+      padding: 10px;
+    }
+
+    .accordion-item {
+      margin-bottom: 5px;
+    }
+
+    .accordion input[type="checkbox"] {
+      display: none;
+    }
+
+    .accordion .content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      background: #555;
+      padding: 0 10px;
+    }
+
+    .accordion label {
+      padding: 10px;
+      background: #444;
+      display: block;
+      cursor: pointer;
+    }
+    .accordion input[type="checkbox"]:checked ~ .content {
+      max-height: 200px;
+      padding: 10px;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    input[type="radio"]:checked + .card {
+      border-color: #007bff;
+      background-color: #e0f0ff;
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Responsive Grid Layout</h1>
+  </header>
+
+  <div class="container">
+    <aside>
+      <h3>Categories</h3>
+      <br>
+
+      <div class="accordion">
+      <div class="accordion-item">
+        <input type="checkbox" id="item1">
+        <label for="item1">Clothing</label>
+        <div class="content">
+          <p>Find the latest clothing collections here.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <input type="checkbox" id="item2">
+        <label for="item2">Electronics</label>
+        <div class="content">
+          <p>Find all electronic gadgets here.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <input type="checkbox" id="item3">
+        <label for="item3">Footwear</label>
+        <div class="content">
+          <p>Find all latest footwear designs here.</p>
+        </div>
+      </div>
+    
+      <div class="accordion-item">
+        <input type="checkbox" id="item4">
+        <label for="item4">Accessories</label>
+        <div class="content">
+          <p>Find fashionable accessories to suit your clothing here.</p>
+        </div>
+      </div>
+    </div>
+    </aside>
+  
+
+    <main>
+        <label>
+          <input type="radio" name="card" checked>
+          <div class="card">
+            <h4>View Latest Collections of Clothing</h4>
+            <p>Ace the heat with our light colored summer clothing collections.</p>
+          </div>
+        </label>
+
+        <label>
+          <input type="radio" name="card">
+          <div class="card">
+            <h4>Discounts and Offers</h4>
+            <p>Offer valid until 31-May-2025. Additional 5% discount for Presidio employees.</p>
+          </div>
+        </label>
+
+        <label>
+          <input type="radio" name="card">
+          <div class="card">
+            <h4>Customer Reviews</h4>
+            <p>Be part of our huge customer base. Give your comment and discover others with similar taste in products.</p>
+          </div>
+        </label>
+        </div>
+
+    </main>
+
+    <div class="footer">
+      <p>Email : support@flipcart.in | Ph : 27362728</p>
+    </div>
+  
+
+</body>
+</html>
